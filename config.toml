@@ -18,6 +18,18 @@ author = "Hadi Hidayat Hammurabi"
   name = "youtube"
   url = "https://youtube.com/c/tamankodekode"
 
+[[params.social]]
+  name = "linkedin"
+  url = "https://linkedin.com/in/hadihammurabi"
+
+[[params.social]]
+  name = "instagram"
+  url = "http://instagram.com/hadihammurabi"
+
+[[params.social]]
+  name = "website"
+  url = "http://tamankodekode.com"
+
 [params.style]
   #darkestColor = "#181F28"
   darkColor = "#212121"
