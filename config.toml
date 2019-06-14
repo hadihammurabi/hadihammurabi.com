@@ -4,6 +4,8 @@ title = "Hadi Hidayat Hammurabi"
 subtitle = "Hammurabi Personal Documents"
 theme = "m10c"
 
+disqusShortname= "hadihammurabi"
+
 [params.author]
 name = "Hadi Hidayat Hammurabi"
 
