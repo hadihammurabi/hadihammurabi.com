@@ -1,10 +1,11 @@
 baseURL = ""
 languageCode = "en-us"
 title = "Hadi Hidayat Hammurabi"
-subtitle = "Hadi Hidayat Hammurabi"
+subtitle = "Hammurabi Personal Documents"
 theme = "m10c"
 
-author = "Hadi Hidayat Hammurabi"
+[params.author]
+name = "Hadi Hidayat Hammurabi"
 
 [[params.social]]
   name = "github"
