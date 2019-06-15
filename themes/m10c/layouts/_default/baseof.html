@@ -4,7 +4,6 @@
 <head>
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} // {{ .Site.Title }}{{ end }}</title>
   <meta charset="utf-8" />
-  {{ hugo.Generator }}
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="{{ .Site.Params.author.name | default "John Doe" }}" />
   <meta name="description"
