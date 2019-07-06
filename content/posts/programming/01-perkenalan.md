@@ -86,6 +86,7 @@ Demikianlah yang dapat saya tuliskan, bila ada yang perlu didiskusikan,
 mari kita diskusi di bagian komentar. Semoga yang singkat ini dapat membantu teman-teman sekalian
 dalam memahami materi ini.
 
+<br/>
 NB: <br/>
 Di website ini, saya akan membagikan berbagai macam hal mengenai programming.
 Mulai dari tutorial, tips dan trik, sampai berita (informasi-informasi terbaru)

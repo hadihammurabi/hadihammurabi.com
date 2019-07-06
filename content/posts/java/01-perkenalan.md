@@ -54,3 +54,9 @@ Sebagai informasi tambahan, mari kita lihat, Java berada dimana saat ini.
 Java sangat powerful untuk membuat aplikasi yang berukuran besar, hal ini karena struktur kode yang mudah
 diatur. Secara performa, cepat atau lambatnya program dapat dipertimbangkan kembali berdasarkan dimana
 aplikasi kita akan berjalan.
+
+<br/>
+NB: <br/>
+Di website ini, saya akan membagikan berbagai macam hal mengenai programming.
+Mulai dari tutorial, tips dan trik, sampai berita (informasi-informasi terbaru)
+mengenai programming.
