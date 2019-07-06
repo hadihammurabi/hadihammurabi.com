@@ -1,0 +1,15 @@
+name = "hammurabi"
+license = "MIT"
+description = "A minimalistic theme for bloggers"
+homepage = "https://github.com/hadihammurabi"
+tags = ["blog", "minimalistic", "minimal", "responsive", "dark"]
+features = [
+  "minimalistic blog",
+  "social icons",
+  "editable colors"
+]
+min_version = 0.55
+
+[author]
+  name = "hadihammurabi"
+  homepage = "https://hadihammurabi.com"

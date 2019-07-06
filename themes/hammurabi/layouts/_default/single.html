@@ -1,0 +1,53 @@
+{{ define "main" }}
+
+
+  <article class="post" style="background: #212121; color: white">
+
+    <div class="section">
+      <div class="columns">
+        <div class="column is-1">
+          <a href="/"><img src="{{ "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author.name | default "John Doe" }}"
+            style="border-radius: 50%; border: 2px solid #0277BD; width: 100%;" /></a>
+        </div>
+        <div class="column is-11">
+          <p class="is-size-5">{{ .Site.Title }}</p>
+          <p>{{ .Site.Params.description | default "Fullstack web developer" }}</p>
+          <p style="color: grey">hadihammurabi@gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+    <header class="columns">
+      <div class="column is-8 is-offset-2">
+        <h1>{{ .Title }}</h1>
+        <div>
+          <div>
+            {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
+            {{ .PublishDate.Format "Jan 2, 2006" }}
+          </div>
+          <div>
+            {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
+            {{ .ReadingTime }} min read
+          </div>
+          {{- with .Params.tags -}}
+          <div>
+            {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
+            {{ range . -}}
+              {{- with $.Site.GetPage (printf "/%s/%s" "tags" . ) -}}
+                <a class="tag" href="{{ .Permalink }}">{{ .Title }}</a>
+              {{- end -}}
+            {{- end -}}
+          </div>
+          {{- end -}}
+        </div>
+        <br/>
+        <div>
+          {{ .Content }}
+        </div>
+        <div>
+          {{ partial "disqus.html" . }}
+        </div>
+      </div>
+    </header>
+  </article>
+{{ end }}

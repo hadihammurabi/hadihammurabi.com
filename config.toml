@@ -2,7 +2,7 @@ baseURL = ""
 languageCode = "en-us"
 title = "Hadi Hidayat Hammurabi"
 subtitle = "Hammurabi Personal Documents"
-theme = "m10c"
+theme = "hammurabi"
 
 disqusShortname= "hadihammurabi"
 
