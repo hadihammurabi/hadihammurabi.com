@@ -10,7 +10,7 @@ merupakan sebuah kegiatan membuat, menguji, dan memelihara sebuah program komput
 Kegiatan programming ini terdiri dari berbagai macam jenis aktivitas,
 mulai dari perencanaan, desain, pengkodean (coding), sampai pengujian.
 
-> Program merupakan instruksi-instruksi yang jalankan komputer,
+> Program merupakan instruksi-instruksi yang di jalankan komputer,
 biasanya kita sebut aplikasi (software).
 
 ## Istilah-istilah dasar dalam dunia programming
