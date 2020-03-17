@@ -1,15 +1,12 @@
-name = "hammurabi"
+name = "Tailwind Journal"
 license = "MIT"
-description = "A minimalistic theme for bloggers"
-homepage = "https://github.com/hadihammurabi"
-tags = ["blog", "minimalistic", "minimal", "responsive", "dark"]
-features = [
-  "minimalistic blog",
-  "social icons",
-  "editable colors"
-]
-min_version = 0.55
+licenselink = "https://github.com/ianrodrigues/hugo-tailwind-journal/blob/master/license.md"
+description = "A minimalist journal template for Hugo using TailwindCSS."
+homepage = "https://github.com/ianrodrigues/hugo-tailwind-journal"
+tags = ["minimalist", "reading", "blog", "tailwindcss"]
+features = ["blog"]
+min_version = "0.54.0"
 
 [author]
-  name = "hadihammurabi"
-  homepage = "https://hadihammurabi.com"
+    name = "Ian Rodrigues"
+    homepage = "https://ianrodrigues.dev"

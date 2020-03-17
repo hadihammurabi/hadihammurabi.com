@@ -1,0 +1,65 @@
+{{ define "content" }}
+<section class="relative bg-blue-100 py-20" id="blog">
+  <div class="text-center">
+    <h2 class="text-3xl leading-tight font-bold">Blog</h2>
+  </div>
+
+  <div class="mt-12">
+    {{ range site.RegularPages.GroupByDate "2006" -}}
+        {{ partial "posts.html" . }}
+    {{ end }}
+  </div>
+
+</section>
+{{ end }}
+
+{{ define "profile" }}
+<section
+  class="relative bg-blue-100 px-4 pt-48 pb-48 text-center">
+  <div>
+    <div class="relative w-full">
+      <h1 class="text-3xl lg:text-4xl xl:text-5xl leading-tight font-bold">
+        Hadi Hidayat Hammurabi
+      </h1>
+      <p class="text-base leading-snug text-gray-700 mt-4">
+        Fullstack Web Developer
+      </p>
+    </div>
+
+    <div class="w-full absolute bottom-0 right-0">
+    </div>
+  </div>
+</section>
+
+<section class="relative bg-gray-100 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-20 text-center" id="about">
+  <div>
+    <h2 class="text-3xl leading-tight font-bold">About Me</h2>
+  </div>
+
+  <div class="flex flex-col md:flex-row items-start justify-between mt-12">
+    <div class="w-full bg-white shadow-lg rounded-lg px-4 py-6 lg:p-8 md:mx-2 lg:mx-4">
+      <img src="/images/web.png" alt="" class="mx-auto h-32">
+      <h4 class="text-xl font-bold leading-tight mt-8">Fullstack Web Developer</h4>
+      <p class="text-gray-700 mt-2">
+        I love to create anything, especially in web technology.
+      </p>
+    </div>
+
+    <div class="w-full bg-white shadow-lg rounded-lg px-4 py-6 lg:p-8 md:mx-2 lg:mx-4 mt-4 md:mt-0">
+      <img src="/images/mentoring.png" alt="" class="mx-auto h-32">
+      <h4 class="text-xl font-bold leading-tight mt-8">Programming Mentor</h4>
+      <p class="text-gray-700 mt-2">
+        I do mentoring and learn programming together.
+      </p>
+    </div>
+
+    <div class="w-full bg-white shadow-lg rounded-lg px-4 py-6 lg:p-8 md:mx-2 lg:mx-4 mt-4 md:mt-0">
+      <img src="/images/community.png" alt="" class="mx-auto h-32">
+      <h4 class="text-xl font-bold leading-tight mt-8">Community Enthusiast</h4>
+      <p class="text-gray-700 mt-2">
+        I create a programmer community and active there.
+      </p>
+    </div>
+  </div>
+</section>
+{{ end }}

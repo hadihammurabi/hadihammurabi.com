@@ -1,53 +1,29 @@
-{{ define "main" }}
+{{ define "content" }}
+<section class="relative bg-gray-100 py-20">
+  <div class="text-center">
+    <h1 class="text-4xl font-bold">{{ .Title }}</h1>
+    <span class="text-gray-700">{{ .Date.Format "02 Jan 2006" }}</span>
 
+    {{ with .Params.tags }}
+    <ol class="mt-4">
+      {{ range . }}
+      <li class="inline-block">
+        <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a>
+      </li>
+      {{ end }}
+    </ol>
+    {{ end }}
+  </div>
 
-  <article class="post" style="background: #212121; color: white">
-
-    <div class="section">
-      <div class="columns">
-        <div class="column is-1">
-          <a href="/"><img src="{{ "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author.name | default "John Doe" }}"
-            style="border-radius: 50%; border: 2px solid #0277BD; width: 100%;" /></a>
-        </div>
-        <div class="column is-11">
-          <p class="is-size-5">{{ .Site.Title }}</p>
-          <p>{{ .Site.Params.description | default "Fullstack web developer" }}</p>
-          <p style="color: grey">hadihammurabi@gmail.com</p>
-        </div>
-      </div>
+  <article class="w-2/3 mx-auto mb-12 p-0 lg:px-8">
+    <div class="bg-white shadow-lg rounded-sm p-8">
+      {{ .Content }}
     </div>
 
-    <header class="columns">
-      <div class="column is-8 is-offset-2">
-        <h1>{{ .Title }}</h1>
-        <div>
-          <div>
-            {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
-            {{ .PublishDate.Format "Jan 2, 2006" }}
-          </div>
-          <div>
-            {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
-            {{ .ReadingTime }} min read
-          </div>
-          {{- with .Params.tags -}}
-          <div>
-            {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
-            {{ range . -}}
-              {{- with $.Site.GetPage (printf "/%s/%s" "tags" . ) -}}
-                <a class="tag" href="{{ .Permalink }}">{{ .Title }}</a>
-              {{- end -}}
-            {{- end -}}
-          </div>
-          {{- end -}}
-        </div>
-        <br/>
-        <div>
-          {{ .Content }}
-        </div>
-        <div>
-          {{ partial "disqus.html" . }}
-        </div>
-      </div>
-    </header>
+    <div class="bg-white shadow-lg rounded-sm mt-4 p-8">
+      {{ template "_internal/disqus.html" . }}
+    </div>
+
   </article>
+</section>
 {{ end }}
