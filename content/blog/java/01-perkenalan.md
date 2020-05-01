@@ -2,7 +2,8 @@
 title: "Perkenalan Java"
 date: 2019-06-27T14:29:40+07:00
 draft: false
-tags: ['java', 'perkenalan']
+tags: ['perkenalan']
+categories: ['java']
 ---
 
 Java merupakan bahasa pemrograman yang dapat digunakan untuk membuat

@@ -2,7 +2,8 @@
 title: "Instalasi Java"
 date: 2019-07-06T20:36:48+07:00
 draft: false
-tags: ['java', 'instalasi']
+tags: ['instalasi']
+categories: ['java']
 ---
 
 Setelah mengetahui [apa itu Java](/posts/java/01-perkenalan/), selanjutnya kita akan

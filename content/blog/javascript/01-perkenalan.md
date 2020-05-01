@@ -2,7 +2,8 @@
 title: "Perkenalan Javascript"
 date: 2019-06-08T00:00:29+07:00
 draft: false
-tags: ["javascript", "perkenalan"]
+tags: ["perkenalan"]
+categories: ['javascript']
 ---
 
 Javascript merupakan sebuah bahasa pemrograman yang biasa digunakan untuk

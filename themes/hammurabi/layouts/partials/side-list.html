@@ -1,0 +1,19 @@
+<div class="bg-white p-4">
+  <h1 class="text-2xl">Categories</h1>
+  {{ range .Site.Taxonomies.categories }}
+      <a href="{{ .Page.Permalink }}" class="text-blue-600">{{ .Page.Title }}</a>
+      <span class="rounded-full px-2 mr-6 bg-gray-600 text-white text-xs rounded leading-none">
+          {{ .Count }} 
+      </span>
+      <br/>
+  {{ end }}
+
+  <h1 class="mt-4 text-2xl">Tags</h1>
+  {{ range .Site.Taxonomies.tags }}
+      <a href="{{ .Page.Permalink }}" class="text-blue-600">{{ .Page.Title }}</a>
+      <span class="rounded-full px-2 mr-6 bg-gray-600 text-white text-xs rounded leading-none">
+          {{ .Count }} 
+      </span>
+      <br/>
+  {{ end }}
+</div>  

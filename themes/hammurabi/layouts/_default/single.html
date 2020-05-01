@@ -4,15 +4,24 @@
     <h1 class="text-4xl font-bold">{{ .Title }}</h1>
     <span class="text-gray-700">{{ .Date.Format "02 Jan 2006" }}</span>
 
-    {{ with .Params.tags }}
     <ol class="mt-4">
-      {{ range . }}
-      <li class="inline-block">
-        <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a>
-      </li>
+      {{ with .Params.categories }}
+        {{ range . }}
+        <li class="inline-block">
+          <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="{{ "categories" | absURL }}/{{ . | urlize }}">{{ . }}</a>
+        </li>
+        {{ end }}
+      {{ end }}
+
+      {{ with .Params.tags }}
+        {{ range . }}
+        <li class="inline-block">
+          <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a>
+        </li>
+        {{ end }}
       {{ end }}
     </ol>
-    {{ end }}
+
   </div>
 
   <article class="w-2/3 mx-auto mb-12 p-0 lg:px-8">

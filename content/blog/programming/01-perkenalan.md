@@ -2,7 +2,8 @@
 title: "Perkenalan Programming"
 date: 2019-06-07T23:55:10+07:00
 draft: false
-tags: ["programming", "perkenalan"]
+tags: ["perkenalan"]
+categories: ['programming']
 ---
 
 Programming atau dalam bahasa Indonesia berarti memprogram
