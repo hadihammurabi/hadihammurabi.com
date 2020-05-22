@@ -1,0 +1,145 @@
+{% load static wagtailuserbar wagtailcore_tags %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}
+                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+                {% with self.get_site.site_name as site_name %}
+                    {% if site_name %}- {{ site_name }}{% endif %}
+                {% endwith %}
+            {% endblock %}
+        </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {# Global stylesheets #}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/hadihammurabicom.css' %}">
+
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+    </head>
+
+    <body class="font-serif bg-gray-200 antialiased {% block body_class %}{% endblock %}">
+        {% wagtailuserbar %}
+        <header class="w-full bg-transparent fixed top-0 left-0 z-50 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-6 bg-white" id="navbar">
+            <nav class="flex items-center justify-between">
+            <div class="">
+                <a href='/'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="188" height="39">
+                    <text transform="translate(50 32)"
+                    fill="#454f5b" font-size="19">
+                    <tspan x="0" y="0">hadihammurabi</tspan>
+                    </text>
+                    <path d="M54 39H0L27 6l27 33zM23" fill="#4ad5f6" />
+                    <path d="M54 0L40 16h27L54 0" fill="#95cdb1" />
+                </svg>
+                </a>
+            </div>
+    
+            <div class="block sm:hidden">
+                <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+                </button>
+            </div>
+    
+            <div class="hidden sm:flex">
+                <ul class="flex flex-col sm:flex-row">
+                <li><a href="/#about" class="sm:px-4 py-2 sm:hidden lg:block">About</a></li>
+                <li><a href="/blog" class="sm:px-4 py-2 sm:hidden md:block">Blog</a></li>
+                </ul>
+            </div>
+            </nav>
+        </header>
+
+        <main class="w-full">
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="relative bg-white px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 pt-12 pb-10 text-center sm:text-left">
+            <div class="flex flex-col sm:flex-row sm:flex-wrap">
+              <div class="sm:w-1/2 lg:w-1/5">
+                <h6 class="text-sm text-gray-600 font-bold uppercase">Find Me</h6>
+                <ul class="mt-4">
+                  <li><a target="_blank" href="https://github.com/hadihammurabi">Github</a></li>
+                  <li class="mt-2"><a target="_blank" href="https://twitter.com/hadihammurabi">Twitter</a></li>
+                  <li class="mt-2"><a target="_blank" href="https://linkedin.com/in/hadihammurabi">Linkedin</a></li>
+                </ul>
+              </div>
+      
+              <div class="mt-8 sm:w-1/2 sm:mt-12 lg:w-1/4 lg:mt-0">
+                <h6 class="text-sm text-gray-600 font-bold uppercase">Contact</h6>
+                <ul class="mt-4">
+                  <li><a href="mailto:hadihammurabi@gmail.com">hadihammurabi@gmail.com <span class="text-gray-600">Email</span></a></li>
+                  <li class="mt-2"><a href="https://t.me/hadihammurabi">@hadihammurabi <span class="text-gray-600">Telegram</span></a></li>
+                </ul>
+              </div>
+      
+              <div class="mt-12 sm:w-1/2 lg:w-2/5 lg:mt-0 lg:pl-12">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="188" height="39">
+                    <text transform="translate(50 32)"
+                      fill="#454f5b" font-size="19">
+                      <tspan x="0" y="0">hadihammurabi</tspan>
+                    </text>
+                    <path d="M54 39H0L27 6l27 33zM23" fill="#4ad5f6" />
+                    <path d="M54 0L40 16h27L54 0" fill="#95cdb1" />
+                  </svg>
+                </div>
+      
+                <p class="text-base text-gray-600 mt-4">
+                  "Hidup tak semudah tutorial." - me
+                </p>
+              </div>
+            </div>
+      
+            <div class="mt-16">
+              <hr class="mb-8">
+              <p class="text-sm text-gray-600">{{ "2006"}} © <a href="/">Hadi Hidayat Hammurabi</a>. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+        <script>
+          hljs.initHighlightingOnLoad();
+      
+          $('.navbar-toggler').click(function () {
+            $(this).toggleClass('active');
+            $('.navigation-menu').toggleClass('hidden');
+            $('#navbar').addClass('bg-white');
+          });
+      
+          $(function () {
+            var navigation = $("#navbar");
+      
+            $(window).scroll(function () {
+              var scroll = $(window).scrollTop();
+              if (scroll >= 10) {
+                navigation.addClass("xl:py-4 shadow-md");
+                navigation.removeClass("xl:py-8");
+              } else {
+                navigation.removeClass("xl:py-4 shadow-md");
+                navigation.addClass("xl:py-8");
+              }
+            });
+          });
+        </script>
+
+        {# Global javascript #}
+        <script type="text/javascript" src="{% static 'js/hadihammurabicom.js' %}"></script>
+
+        {% block extra_js %}
+            {# Override this in templates to add extra javascript #}
+        {% endblock %}
+    </body>
+</html>

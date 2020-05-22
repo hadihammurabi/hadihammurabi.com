@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% load static i18n wagtailcore_tags %}
+
+{% block content %}
+<section class="relative bg-blue-100 px-4 pt-48 pb-48 text-center">
+  <div>
+    <div class="relative w-full">
+      <div class="mx-auto" style="background: url(/media/images/profile-square.jpg) no-repeat center; background-size: cover; height: 250px; width: 250px; border-radius: 50%"></div>
+      <h1 class="text-3xl lg:text-4xl xl:text-5xl mt-8 leading-tight font-bold">
+        Hadi Hidayat Hammurabi
+      </h1>
+      <p class="text-base leading-snug text-gray-700 mt-4">
+        Fullstack Web Developer
+      </p>
+      <div class="flex justify-center mt-4">
+        <div class="mx-2">
+          <a href="https://sourcerer.io/hadihammurabi"><img src="https://img.shields.io/badge/JavaScript-230%20commits-orange.svg" alt=""></a>
+        </div>
+        <div class="mx-2">
+          <a href="https://sourcerer.io/hadihammurabi"><img src="https://img.shields.io/badge/Python-55%20commits-orange.svg" alt=""></a>
+        </div>
+        <div class="mx-2">
+          <a href="https://sourcerer.io/hadihammurabi"><img src="https://img.shields.io/badge/Go-32%20commits-orange.svg" alt=""></a>
+        </div>
+        <div class="mx-2">
+          <a href="https://sourcerer.io/hadihammurabi"><img src="https://img.shields.io/badge/Java-26%20commits-orange.svg" alt=""></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full absolute bottom-0 right-0">
+    </div>
+  </div>
+</section>
+
+<section class="relative bg-gray-100 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-20 text-center" id="about">
+  <div>
+    <h2 class="text-3xl leading-tight font-bold">About Me</h2>
+  </div>
+
+  <div class="flex flex-col md:flex-row items-start justify-between mt-12">
+    <div class="w-full bg-white shadow-lg rounded-lg px-4 py-6 lg:p-8 md:mx-2 lg:mx-4">
+      <img src="/media/images/web.png" alt="" class="mx-auto h-32">
+      <h4 class="text-xl font-bold leading-tight mt-8">Fullstack Web Developer</h4>
+      <p class="text-gray-700 mt-2">
+        I love to create anything, especially in web technology.
+      </p>
+    </div>
+
+    <div class="w-full bg-white shadow-lg rounded-lg px-4 py-6 lg:p-8 md:mx-2 lg:mx-4 mt-4 md:mt-0">
+      <img src="/media/images/mentoring.png" alt="" class="mx-auto h-32">
+      <h4 class="text-xl font-bold leading-tight mt-8">Programming Mentor</h4>
+      <p class="text-gray-700 mt-2">
+        I do mentoring and learn programming with motivated learners together.
+      </p>
+    </div>
+
+    <div class="w-full bg-white shadow-lg rounded-lg px-4 py-6 lg:p-8 md:mx-2 lg:mx-4 mt-4 md:mt-0">
+      <img src="/media/images/community.png" alt="" class="mx-auto h-32">
+      <h4 class="text-xl font-bold leading-tight mt-8">Community Enthusiast</h4>
+      <p class="text-gray-700 mt-2">
+        I initialize programmer online and offline based communities and active there.
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock content %}
