@@ -7,6 +7,7 @@ def index(request):
   return page.render(request)
 
 def post(request, slug):
-  page = PostPage.objects.get()
-  return page.render(request, slug=slug)
+  page = PostPage.objects.filter(slug=slug).first()
+  return render(request, 'blog/post_page.html', context={'post': page})
+
 
