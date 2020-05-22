@@ -1,5 +1,16 @@
 @import 'https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700';
-@import 'https://d33wubrfki0l68.cloudfront.net/css/d9b5bc0170410859ddcaea7f3c3a80e070bcbc68/build/tailwind.css';
+@import 'https://fonts.googleapis.com/css2?family=Roboto&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap';
+@import 'https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css';
+
+* {
+  font-family: Roboto, sans-serif;
+  font-size: 1.1rem;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+}
 
 pre code {
   display: block;
