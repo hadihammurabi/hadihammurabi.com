@@ -10,7 +10,13 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
 class BlogPage(Page):
+  description = models.CharField(max_length=255, blank=True, null=True)
+
   subpage_types = ['blog.PostPage']
+
+  content_panels = Page.content_panels + [
+    FieldPanel('description', classname="full"),
+  ]
 
   def get_context(self, request):
     context = super().get_context(request)
@@ -21,6 +27,7 @@ class BlogPage(Page):
     return render(request, 'blog/blog_page.html', self.get_context(request))
 
 class PostPage(Page):
+  description = models.CharField(max_length=255, blank=True, null=True)
   body = RichTextField()
   feed_image = models.ForeignKey(
     'wagtailimages.Image',
@@ -32,9 +39,11 @@ class PostPage(Page):
 
   search_fields = Page.search_fields + [
     index.SearchField('body'),
+    index.SearchField('description'),
   ]
 
   content_panels = Page.content_panels + [
+    FieldPanel('description', classname="full"),
     FieldPanel('body', classname="full"),
     InlinePanel('related_links', label="Related links"),
   ]
@@ -46,15 +55,6 @@ class PostPage(Page):
 
   parent_page_types = ['blog.BlogPage']
   subpage_types = []
-
-  def get_context(self, request, slug):
-    context = super().get_context(request)
-    context['post'] = PostPage.objects.filter(slug=slug).live().first()
-    return context
-
-  def render(self, request, slug):
-    return render(request, 'blog/post_page.html', self.get_context(request, slug))
-
 
 class PostPageRelatedLink(Orderable):
   page = ParentalKey(PostPage, on_delete=models.CASCADE, related_name='related_links')
