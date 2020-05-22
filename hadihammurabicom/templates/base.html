@@ -1,9 +1,29 @@
-{% load static wagtailuserbar wagtailcore_tags %}
-
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+  {% load static wagtailuserbar wagtailcore_tags wagtailimages_tags %}
+  {% image post.feed_image scale-150 as feed_image %}
     <head>
         <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="{{ page.seo_title }}">
+        <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}Hadihammurabi's Website{% endif %}">
+        <meta name="twitter:site" content="http://hadihammurabi.com">
+        <meta name="twitter:creator" content="hadihammurabi@gmail.com">
+        <meta name="twitter:image" content="{% if post.description %}http://hadihammurabi.com{{ feed_image.url  }}{% else %}http://hadihammurabi.com{% static 'images/profile-square.jpg' %}{% endif %}">
+
+        <meta property="og:type" content="{% if page.description %}website{% else %}article{% endif %}">
+        <meta property="og:title" content="{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}">
+        <meta property="og:description" content="{% if page.description %}{{ page.description }}{% endif %}">
+        <meta property="og:url" content="http://hadihammurabi.com">
+        <meta property="og:site_name" content="Hadihammurabi's Website">
+        <meta property="og:image" content="{% if post.description %}http://hadihammurabi.com{{ feed_image.url  }}{% else %}http://hadihammurabi.com{% static 'images/profile-square.jpg' %}{% endif %}">
+
+        <meta name="author" content="hadihammurabi@gmail.com">
+        <meta name="description" content="{% if post.description %}{{ post.description }}{% else %}{{ page.description }}{% endif %}">
+
         <title>
             {% block title %}
                 {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
@@ -14,8 +34,6 @@
                 {% endwith %}
             {% endblock %}
         </title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/hadihammurabicom.css' %}">
@@ -27,6 +45,7 @@
 
     <body class="font-serif bg-gray-200 antialiased {% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
+
         <header class="w-full bg-transparent fixed top-0 left-0 z-50 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-6 bg-white" id="navbar">
             <nav class="flex items-center justify-between">
             <div class="">
@@ -59,9 +78,7 @@
             </nav>
         </header>
 
-        <main class="w-full">
-            {% block content %}{% endblock %}
-        </main>
+        {% block content %}{% endblock %}
 
         <footer class="relative bg-white px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 pt-12 pb-10 text-center sm:text-left">
             <div class="flex flex-col sm:flex-row sm:flex-wrap">
