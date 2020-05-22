@@ -21,7 +21,7 @@
         <time class="text-gray-700 block md:flex-l-24" datetime="{{post.first_published_at}}">{{ post.first_published_at }}</time>
         
         <p class="mt-2">
-          {{ post.body|safe|truncatewords:"50"|linebreaks }}
+          {{ post.body|safe }}
         </p>
       </div>
     </div>
